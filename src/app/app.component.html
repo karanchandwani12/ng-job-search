@@ -1,1 +1,8 @@
-<h1>Find your Job here</h1>
+<div style="text-align: center;">
+    <h1>Find your Job</h1>
+    <nav >
+   <button class="jobs-btn" [routerLink]="['jobs']"  >JOBS</button>
+   <button class="favorites-btn" [routerLink]="['favorites']" >FAVORITES</button>
+</nav>
+<router-outlet></router-outlet>
+</div>

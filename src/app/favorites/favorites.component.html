@@ -1,0 +1,11 @@
+<ul>
+    <div *ngFor="let job of jobs; ">
+        <div *ngIf=myfavMarkedJobs.includes(job.id)>
+            <img src=""> 
+            <h3 >{{job.title}} <br> </h3>
+            <h5 > Company: {{job.companyName}}  Reference: {{job.reference}} </h5>
+        </div>
+    </div>
+    <div *ngIf="(myfavMarkedJobs.length<1)">
+        <h2>No Favorites added.</h2></div>
+</ul>

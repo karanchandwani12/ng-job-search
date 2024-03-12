@@ -1,0 +1,9 @@
+<div >
+    <button [routerLink]="['/jobs']" routerLinkActive="active" >Back</button>
+</div>
+<body>
+    <div>Publish Date: {{currentJobPost?.publishDate}}</div>
+    <div>Location: {{currentJobPost?.location}}</div>
+    <div>Reference: {{currentJobPost?.reference}}</div>
+    <div [innerHTML]=currentJobPost?.description></div>
+</body>

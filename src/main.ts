@@ -3,13 +3,13 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import {setupWorker} from 'msw/browser';
 import {http, HttpResponse} from 'msw';
+import { provideHttpClient } from '@angular/common/http';
 
-bootstrapApplication(AppComponent, appConfig)
+bootstrapApplication(AppComponent, appConfig,)
   .catch((err) => console.error(err));
 
 
-
-const handlers = [
+export const handlers = [
   http.get('/jobs/:id', ({ params }) => {
 
     const options = {
