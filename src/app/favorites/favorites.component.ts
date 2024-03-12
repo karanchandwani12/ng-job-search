@@ -9,20 +9,19 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './favorites.component.html',
-  styleUrl: './favorites.component.css'
+  styleUrl: './favorites.component.css',
 })
 export class FavoritesComponent {
-  public myfavMarkedJobs= this.myServ.favMarkedJobs;
-  public jobs: Array<IJobDetail>=[];
+  public myfavMarkedJobs = this.myServ.favMarkedJobs;
+  public jobs: Array<IJobDetail> = [];
 
-  constructor(private myServ : SjobServService, private route : Router){}
- 
-  ngOnInit(){
-     this.myServ.getJobDetails().subscribe(data=>this.jobs=data);
+  constructor(private myServ: SjobServService, private route: Router) {}
+
+  ngOnInit() {
+    this.myServ.getJobDetails().subscribe((data) => (this.jobs = data));
   }
 
-  jobdesc( job: IJobDetail){
-    // this.jobServ.descibeJob=job.description;
-     this.route.navigate(['/jobs',job.id])
-   }
+  jobdesc(job: IJobDetail) {
+    this.route.navigate(['/jobs', job.id]);
+  }
 }

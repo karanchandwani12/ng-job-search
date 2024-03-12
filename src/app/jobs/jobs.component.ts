@@ -7,35 +7,27 @@ import { SjobServService } from '../sjob-serv.service';
 @Component({
   selector: 'app-jobs',
   standalone: true,
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './jobs.component.html',
-  styleUrl: './jobs.component.css'
+  styleUrl: './jobs.component.css',
 })
 export class JobsComponent {
+  public jobs: Array<IJobDetail> = [];
+  public myfavMarkedJobs = this.jobServ.favMarkedJobs;
 
-  public jobs: Array<IJobDetail>=[];
-  public myfavMarkedJobs= this.jobServ.favMarkedJobs;
+  constructor(private jobServ: SjobServService, private route: Router) {}
 
-
-  constructor(private jobServ : SjobServService, private route : Router){
+  ngOnInit() {
+    this.jobServ.getJobDetails().subscribe((data) => (this.jobs = data));
   }
 
-  ngOnInit(){
-    this.jobServ.getJobDetails().subscribe(data=>this.jobs=data);
-    
-  }
-
-  toggleFunc(job: IJobDetail){
+  toggleFunc(job: IJobDetail) {
     this.jobServ.addFavJobs(job);
-    this.myfavMarkedJobs=this.jobServ.favMarkedJobs;
-    job.isFavorite=!job.isFavorite;
+    this.myfavMarkedJobs = this.jobServ.favMarkedJobs;
     console.log(this.myfavMarkedJobs);
-}
-
-  jobdesc( job: IJobDetail){
-   // this.jobServ.descibeJob=job.description;
-    this.route.navigate(['/jobs',job.id])
   }
 
-
+  jobdesc(job: IJobDetail) {
+    this.route.navigate(['/jobs', job.id]);
+  }
 }

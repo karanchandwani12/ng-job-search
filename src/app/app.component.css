@@ -1,9 +1,10 @@
-.button-jobs {background-color: #4b4a4a; 
+.button-jobs {
+  background-color: #4b4a4a;
   color: rgb(209, 74, 74);
   text-align: center;
-} /* Gray */ 
+} /* Gray */
 
-.jobs-btn{
+.jobs-btn {
   background-color: rgb(237, 240, 237);
   color: #0a0a0a;
   padding: 10px 150px;
@@ -12,7 +13,7 @@
   cursor: pointer;
 }
 
-.favorites-btn{
+.favorites-btn {
   background-color: rgb(237, 240, 237);
   color: rgb(10, 10, 10);
   text-align: center;

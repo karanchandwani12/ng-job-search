@@ -8,29 +8,30 @@ import { IJobDescription } from '../ijob-description';
 @Component({
   selector: 'app-jobs-description',
   standalone: true,
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './jobs-description.component.html',
-  styleUrl: './jobs-description.component.css'
+  styleUrl: './jobs-description.component.css',
 })
 export class JobsDescriptionComponent {
   public currentJobPost: IJobDescription | undefined;
-  public currentjobDetails: Array<IJobDetail>=[];
-  public currentJobDesc: String='';
+  public currentjobDetails: Array<IJobDetail> = [];
+  public currentJobDesc: String = '';
 
   public jobid: string | null | undefined;
-  
-constructor(private actRoute  : ActivatedRoute, private serv : SjobServService){
-  console.log('const');
 
-}
+  constructor(private actRoute: ActivatedRoute, private serv: SjobServService) {
+    console.log('const');
+  }
 
- ngOnInit(){
-  this.actRoute.paramMap.subscribe((params: ParamMap)=>{
-    let id= params.get('id');
-    this.jobid=id;
-  });
-if(this.jobid!=null)
-  this.serv.getJobDescription(this.jobid).subscribe(data=>this.currentJobPost=data);
-  console.log(this.currentJobPost);
- }
+  ngOnInit() {
+    this.actRoute.paramMap.subscribe((params: ParamMap) => {
+      let id = params.get('id');
+      this.jobid = id;
+    });
+    if (this.jobid != null)
+      this.serv
+        .getJobDescription(this.jobid)
+        .subscribe((data) => (this.currentJobPost = data));
+    console.log(this.currentJobPost);
+  }
 }
