@@ -1,7 +1,7 @@
 <div class="column" *ngFor="let job of jobs;">
     <div   class="row" style="background-color:#d1cece;">
         <img style="position: relative; right: 340px; top: 70px; width: 50px;" src="{{job.companyLogo}}">
-        <div style="position: inherit; right: 150px; top: 20px;"  (click)="jobdesc(job)"><h3> {{job.title}} </h3>
+        <div style="position: inherit; right: 150px; top: 20px;"  (click)="jobdesc(job)"><h3><b></b> {{job.title}}<b></b> </h3>
     </div>
     <div style="position: var(active); right: 60px;"> Company: {{job.companyName}}&emsp;Reference: {{job.reference}}</div>
     <div *ngIf="!(myfavMarkedJobs.includes(job.id));then fav ; else notFav "></div>
