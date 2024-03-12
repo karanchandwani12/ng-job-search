@@ -6,3 +6,12 @@
     font-size: 16px;
     cursor: pointer;
   }
+
+  .rounded-btn{
+    background-color: white;
+    padding: 12px 16px;
+    font-size: 10px;
+    border-radius: 25px;
+  }
+
+  

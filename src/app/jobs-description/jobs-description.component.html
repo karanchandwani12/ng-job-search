@@ -1,11 +1,13 @@
 <div >
-    <button style="position: relative; right: 270px; top:10px; width: 200px;" class="btn" [routerLink]="['/jobs']" routerLinkActive="active" > <i class="fa fa-home"></i>Back</button>
+    <button style="position: relative; right: 270px; top:5px; width: 200px;" class="btn" [routerLink]="['/jobs']" routerLinkActive="active" > <i class="fa fa-home"></i>Back</button>
 </div>
-<body>
-    <img style="position: relative; right: 480px; top:-20px; width: 200px;" src="{{currentJobPost?.companyLogo}}">
+<body style="background-color:#d1cece;">
+    <img style="position: relative; right: 480px; top:20px; width: 150px;" src="{{currentJobPost?.companyLogo}}">
     <div style="position: relative; right: -40px; top: -170px;">
         <h1>{{currentJobPost?.companyName}}-{{currentJobPost?.title}}</h1>
-    <button style="color: #97b7f7;">{{currentJobPost?.types}}</button>
+    <button class="rounded-btn" disabled style="color: #97b7f7;">{{currentJobPost?.types}}</button>
+    <button class="rounded-btn" disabled style="color: #97b7f7;">{{currentJobPost?.industries}}</button>
+
     </div>
     <div style="text-align: justify;"><b>Publish Date:</b> {{currentJobPost?.publishDate}}</div>
     <div style="text-align: justify;"><b>Location: </b>{{currentJobPost?.location}}</div>
