@@ -1,14 +1,15 @@
 <div class="column" *ngFor="let job of jobs;">
-    <div   class="row" style="background-color:#aaa;">
-        <div style="position:relative; right:230px; top:20px; background-color:rgb(161, 161, 156);"  (click)="jobdesc(job)"><h3> {{job.title}} </h3>
+    <div   class="row" style="background-color:#d1cece;">
+        <img style="position: relative; right: 340px; top: 70px; width: 50px;" src="{{job.companyLogo}}">
+        <div style="position: inherit; right: 150px; top: 20px;"  (click)="jobdesc(job)"><h3> {{job.title}} </h3>
     </div>
-    <div style="position:relative; right:150px; background-color:rgb(161, 161, 156);"> Company: {{job.companyName}}&emsp;Reference: {{job.reference}}</div>
+    <div style="position: var(active); right: 60px;"> Company: {{job.companyName}}&emsp;Reference: {{job.reference}}</div>
     <div *ngIf="!(myfavMarkedJobs.includes(job.id));then fav ; else notFav "></div>
                 <ng-template  #fav>
-                 <h2 id="star-{{job.id}}" (click)="toggleFunc(job)" class="fa fa-star-o"></h2>
+                 <h2 style="position:relative; right:-420px; top: -45px; font-size: large;" id="star-{{job.id}}" (click)="toggleFunc(job)" class="fa fa-star-o"></h2>
         </ng-template>
         <ng-template #notFav>
-            <h2 id="star-{{job.id}}" (click)="toggleFunc(job)" class="fa fa-star active"></h2>
+            <h2  style="position:relative; right:-420px; top: -45px; font-size: large;" id="star-{{job.id}}" (click)="toggleFunc(job)" class="fa fa-star active"></h2>
         </ng-template>
     </div>
 </div>
