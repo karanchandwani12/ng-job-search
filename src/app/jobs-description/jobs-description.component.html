@@ -1,5 +1,5 @@
 <div >
-    <button [routerLink]="['/jobs']" routerLinkActive="active" >Back</button>
+    <button style="position: relative; right: 270px; top:10px; width: 200px;" class="btn" [routerLink]="['/jobs']" routerLinkActive="active" > <i class="fa fa-home"></i>Back</button>
 </div>
 <body>
     <img style="position: relative; right: 480px; top:-20px; width: 200px;" src="{{currentJobPost?.companyLogo}}">
@@ -10,7 +10,7 @@
     <div style="text-align: justify;"><b>Publish Date:</b> {{currentJobPost?.publishDate}}</div>
     <div style="text-align: justify;"><b>Location: </b>{{currentJobPost?.location}}</div>
     <div style="text-align: justify;"><b>Reference:</b> {{currentJobPost?.reference}}</div>
-    <div style="text-align: justify;"><b>Description</b></div>
+    <div style="text-align: justify;"><b>Description: </b></div>
     <div style="text-align: justify;"  [innerHTML]=currentJobPost?.description>
     </div>
 </body>
