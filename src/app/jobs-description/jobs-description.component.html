@@ -1,5 +1,5 @@
-<div>
-    <button style="position: relative; right: 270px; top:5px; width: 200px;" class="btn" [routerLink]="['/jobs']"
+<div id="back">
+    <button  style="position: relative; right: 270px; top:5px; width: 200px;" class="btn" [routerLink]="['/jobs']"
         routerLinkActive="active"> <i class="fa fa-home"></i>Back</button>
 </div>
 
@@ -11,10 +11,10 @@
         <button class="rounded-btn" disabled style="color: #97b7f7;">{{currentJobPost?.industries}}</button>
 
     </div>
-    <div style="text-align: justify;"><b>Publish Date:</b> {{currentJobPost?.publishDate}}</div>
-    <div style="text-align: justify;"><b>Location: </b>{{currentJobPost?.location}}</div>
-    <div style="text-align: justify;"><b>Reference:</b> {{currentJobPost?.reference}}</div>
-    <div style="text-align: justify;"><b>Description: </b></div>
-    <div style="text-align: justify;" [innerHTML]=currentJobPost?.description>
+    <div id="publish-date" style="text-align: justify;"><b>Publish Date:</b> {{currentJobPost?.publishDate}}</div>
+    <div id="location" style="text-align: justify;"><b>Location: </b>{{currentJobPost?.location}}</div>
+    <div id="reference" style="text-align: justify;"><b>Reference:</b> {{currentJobPost?.reference}}</div>
+    <div id="desc-tag" style="text-align: justify;"><b>Description: </b></div>
+    <div id="description" style="text-align: justify;" [innerHTML]=currentJobPost?.description>
     </div>
 </body>

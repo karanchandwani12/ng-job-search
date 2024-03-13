@@ -1,5 +1,5 @@
-<div class="column" *ngFor="let job of jobs;">
-    <div class="row" style="background-color:#d1cece;">
+<div id="div-col" class="column" *ngFor="let job of jobs;">
+    <div id="div-row" class="row" style="background-color:#d1cece;">
         <img style="position: relative; right: 340px; top: 70px; width: 50px;" src="{{job.companyLogo}}">
         <div style="position: inherit; right: 150px; top: 20px;" (click)="jobdesc(job)">
             <h3><b></b> {{job.title}}<b></b> </h3>
